@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <script src="public/soundcloud-sdk.js"></script>
+  <script src="public/soundmanager2.js"></script>
+  <script>
+  soundManager.setup({
+    preferFlash: true,
+    url: 'public/'
+  });
+
+  window.top.soundManager = window.soundManager;
+  window.top.SC = window.SC;
+  
+  var checkSCAvailable = function () {
+    if (window.top.onSoundcloudReady) {
+      window.top.onSoundcloudReady();
+    }
+    else {
+      setTimeout(checkSCAvailable, 1000);
+    }
+  };
+  
+  checkSCAvailable();
+  </script>
+</body>
+</html>
