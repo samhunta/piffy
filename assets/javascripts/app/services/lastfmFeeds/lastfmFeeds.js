@@ -8,7 +8,7 @@
 
   function lastfmFeedsFactoryProvider() {
     var config = {
-      url: 'http://ws.audioscrobbler.com/2.0/',
+      url: 'https://ws.audioscrobbler.com/2.0/',
       defaults: {
         'format': 'json',
         'limit': 30

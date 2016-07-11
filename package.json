@@ -1,6 +1,6 @@
 {
   "name": "piffy",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "",
   "main": "app://eloquent/index.html#!/login",
   "node-main": "player.js",
