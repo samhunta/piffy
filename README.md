@@ -1,7 +1,12 @@
 Eloquent Music Player
 =====================
 
+<img src="https://cdn.rawgit.com/samhunta/piffy/tree/master/media/screenshot.png">
+
 ***Eloquent*** is a music player built with [node-webkit](https://github.com/rogerwang/node-webkit/wiki) I built of a couple years ago. I never got around to finishing it but most of the major pieces work
+
+[View demo](https://samhunta.github.io/piffy) (leave login empty)
+
 
 ```
 # Install bower and npm dependencies
