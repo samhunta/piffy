@@ -6,6 +6,14 @@
   "node-main": "player.js",
   "node-remote": "127.0.0.1:24922",
   "chromium-args": "--enable-precise-memory-info",
+  "scripts": {
+    "start": "node player.js",
+    "gh-pages": "npm run dist && gh-pages -d dist",
+    "dist": "gulp build:web",
+    "dist-desktop": "gulp build:desktop",
+    "dev-desktop": "gulp dev:desktop",
+    "dev": "gulp dev:web"
+  },
   "window": {
     "title": "Loading...",
     "show": false,
