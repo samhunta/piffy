@@ -1292,7 +1292,7 @@
 
 	  function lastfmFeedsFactoryProvider() {
 	    var config = {
-	      url: 'http://ws.audioscrobbler.com/2.0/',
+	      url: 'https://ws.audioscrobbler.com/2.0/',
 	      defaults: {
 	        'format': 'json',
 	        'limit': 30
@@ -43253,7 +43253,7 @@
 /* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(angular) {var v1="<div app-loader=\"app.loading\"></div> <div ng-if=\"!app.loading\" class=\"navbar navbar-main navbar-inverse navbar-fixed-top\" role=\"navigation\"> <div class=\"container-fluid\"> <div class=\"clearfix navbar-titlebar\" style=\"-webkit-app-region: drag\"> <div class=\"navbar-app-title\"> <a class=\"navbar-app-brand\" ng-bind=\"::app.settings.get('title').toUpperCase()\"></a> </div> <div class=\"clearfix navbar-window-buttons\"> <div ng-if=\"!nodeless\" class=\"pull-left\"> <div ng-click=\"closeWindow($event)\" class=\"navbar-window-button navbar-window-button-close\"></div> <div ng-click=\"minimizeWindow($event)\" class=\"navbar-window-button navbar-window-button-min\"></div> <div ng-click=\"maximizeWindow($event)\" class=\"navbar-window-button navbar-window-button-max\"></div> </div> <div ng-if=\"!nodeless\" class=\"pull-left history-nav\"> <span ng-click=\"historyBack($event)\" ng-class=\"{'has-history': $root.$history.hasPrev}\" class=\"pull-left player-controls-back-small\"></span>\n<span ng-click=\"historyForward($event)\" ng-class=\"{'has-history': $root.$history.hasNext}\" class=\"pull-left player-controls-forward-small\"></span> </div> </div> </div> <div class=\"pull-right\"> <ul class=\"nav navbar-nav\"> <li><a bs-dropdown=\"userPreferencesDropdown\" data-placement=\"bottom-right\" data-html=\"true\" class=\"btn-lg\"><img ng-src=\"http://www.gravatar.com/avatar/{{userMeta.avatar}}\" class=\"avatar-settings\"></a></li> </ul> </div> <div ui-view=\"searchBar\"></div> </div> </div> <div sh-columns=\"{}\" sh-columns-callback=\"app.saveColumnWidths()\" class=\"main-wrapper\"> <div ui-view=\"sidebar\"></div> <div ng-style=\"{'left': app.columnWidths.sidebar}\" class=\"main\" sh-column=\"{last:true}\"> <div ng-show=\"app.tabsNav.selected.length === 0\"> <div app-loader=\"app.isLoading\"></div> <div ng-show=\"!app.isLoading\"> <div ng-animate=\"'toggle'\" ui-view></div> </div> </div> <div ng-repeat=\"tab in app.tabs\"> <div ng-show=\"app.tabsNav.selected[0] === tab\" ng-style=\"{'left': app.columnWidths.sidebar}\" sh-column=\"{last:true}\"> <div sh-watch=\"true\" sh-include=\"tab\"></div> </div> </div> </div> </div> <div ui-view=\"player\"></div>";
+	/* WEBPACK VAR INJECTION */(function(angular) {var v1="<div app-loader=\"app.loading\"></div> <div ng-if=\"!app.loading\" class=\"navbar navbar-main navbar-inverse navbar-fixed-top\" role=\"navigation\"> <div class=\"container-fluid\"> <div class=\"clearfix navbar-titlebar\" style=\"-webkit-app-region: drag\"> <div class=\"navbar-app-title\"> <a class=\"navbar-app-brand\" ng-bind=\"::app.settings.get('title').toUpperCase()\"></a> </div> <div class=\"clearfix navbar-window-buttons\"> <div ng-if=\"!nodeless\" class=\"pull-left\"> <div ng-click=\"closeWindow($event)\" class=\"navbar-window-button navbar-window-button-close\"></div> <div ng-click=\"minimizeWindow($event)\" class=\"navbar-window-button navbar-window-button-min\"></div> <div ng-click=\"maximizeWindow($event)\" class=\"navbar-window-button navbar-window-button-max\"></div> </div> <div ng-if=\"!nodeless\" class=\"pull-left history-nav\"> <span ng-click=\"historyBack($event)\" ng-class=\"{'has-history': $root.$history.hasPrev}\" class=\"pull-left player-controls-back-small\"></span>\n<span ng-click=\"historyForward($event)\" ng-class=\"{'has-history': $root.$history.hasNext}\" class=\"pull-left player-controls-forward-small\"></span> </div> </div> </div> <div class=\"pull-right\"> <ul class=\"nav navbar-nav\"> <li><a bs-dropdown=\"userPreferencesDropdown\" data-placement=\"bottom-right\" data-html=\"true\" class=\"btn-lg\"><img ng-src=\"https://www.gravatar.com/avatar/{{userMeta.avatar}}\" class=\"avatar-settings\"></a></li> </ul> </div> <div ui-view=\"searchBar\"></div> </div> </div> <div sh-columns=\"{}\" sh-columns-callback=\"app.saveColumnWidths()\" class=\"main-wrapper\"> <div ui-view=\"sidebar\"></div> <div ng-style=\"{'left': app.columnWidths.sidebar}\" class=\"main\" sh-column=\"{last:true}\"> <div ng-show=\"app.tabsNav.selected.length === 0\"> <div app-loader=\"app.isLoading\"></div> <div ng-show=\"!app.isLoading\"> <div ng-animate=\"'toggle'\" ui-view></div> </div> </div> <div ng-repeat=\"tab in app.tabs\"> <div ng-show=\"app.tabsNav.selected[0] === tab\" ng-style=\"{'left': app.columnWidths.sidebar}\" sh-column=\"{last:true}\"> <div sh-watch=\"true\" sh-include=\"tab\"></div> </div> </div> </div> </div> <div ui-view=\"player\"></div>";
 	window.angular.module(["ng"]).run(["$templateCache",function(c){c.put("app/templates/app.html", v1)}]);
 	module.exports=v1;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)))
@@ -50391,7 +50391,7 @@
 /* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var now = __webpack_require__(130)
+	var now = __webpack_require__(131)
 	  , global = typeof window === 'undefined' ? {} : window
 	  , vendors = ['moz', 'webkit']
 	  , suffix = 'AnimationFrame'
@@ -51946,7 +51946,7 @@
 
 	"use strict";
 
-	var invariant = __webpack_require__(131);
+	var invariant = __webpack_require__(130);
 
 	var _lastID = 1;
 	var _prefix = 'ID_';
@@ -52188,49 +52188,6 @@
 /* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {// Generated by CoffeeScript 1.6.3
-	(function() {
-	  var getNanoSeconds, hrtime, loadTime;
-
-	  if ((typeof performance !== "undefined" && performance !== null) && performance.now) {
-	    module.exports = function() {
-	      return performance.now();
-	    };
-	  } else if ((typeof process !== "undefined" && process !== null) && process.hrtime) {
-	    module.exports = function() {
-	      return (getNanoSeconds() - loadTime) / 1e6;
-	    };
-	    hrtime = process.hrtime;
-	    getNanoSeconds = function() {
-	      var hr;
-	      hr = hrtime();
-	      return hr[0] * 1e9 + hr[1];
-	    };
-	    loadTime = getNanoSeconds();
-	  } else if (Date.now) {
-	    module.exports = function() {
-	      return Date.now() - loadTime;
-	    };
-	    loadTime = Date.now();
-	  } else {
-	    module.exports = function() {
-	      return new Date().getTime() - loadTime;
-	    };
-	    loadTime = new Date().getTime();
-	  }
-
-	}).call(this);
-
-	/*
-	//@ sourceMappingURL=performance-now.map
-	*/
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(79)))
-
-/***/ },
-/* 131 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/**
 	 * Copyright (c) 2014, Facebook, Inc.
 	 * All rights reserved.
@@ -52285,6 +52242,49 @@
 
 	module.exports = invariant;
 
+
+/***/ },
+/* 131 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {// Generated by CoffeeScript 1.6.3
+	(function() {
+	  var getNanoSeconds, hrtime, loadTime;
+
+	  if ((typeof performance !== "undefined" && performance !== null) && performance.now) {
+	    module.exports = function() {
+	      return performance.now();
+	    };
+	  } else if ((typeof process !== "undefined" && process !== null) && process.hrtime) {
+	    module.exports = function() {
+	      return (getNanoSeconds() - loadTime) / 1e6;
+	    };
+	    hrtime = process.hrtime;
+	    getNanoSeconds = function() {
+	      var hr;
+	      hr = hrtime();
+	      return hr[0] * 1e9 + hr[1];
+	    };
+	    loadTime = getNanoSeconds();
+	  } else if (Date.now) {
+	    module.exports = function() {
+	      return Date.now() - loadTime;
+	    };
+	    loadTime = Date.now();
+	  } else {
+	    module.exports = function() {
+	      return new Date().getTime() - loadTime;
+	    };
+	    loadTime = new Date().getTime();
+	  }
+
+	}).call(this);
+
+	/*
+	//@ sourceMappingURL=performance-now.map
+	*/
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(79)))
 
 /***/ }
 /******/ ])
