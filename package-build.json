@@ -1,0 +1,25 @@
+{
+  "name": "piffy",
+  "version": "0.0.2",
+  "description": "",
+  "main": "app://eloquent/index.html#!/login",
+  "node-main": "player.js",
+  "node-remote": "127.0.0.1:24922",
+  "window": {
+    "title": "Loading...",
+    "show": false,
+    "toolbar": false,
+    "frame": false,
+    "width": 351,
+    "height": 331,
+    "resizable": false
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "author": "Samuel Hunter",
+  "dependencies": {
+    "ejs": "^2.2.4",
+    "express": "~3.4.8"
+  }
+}

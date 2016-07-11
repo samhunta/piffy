@@ -1,0 +1,47 @@
+<div app-loader="isLoading"></div>
+<div ng-show="!isLoading" sh-autofocus="1" sh-key="{ del: '$event.preventDefault()', bsp: '$event.preventDefault()' }" sh-scrollarea="85" class="full-container">
+  <div sh-focussable sh-selectables="selectableOpts" class="main-stretch song-table main-top">
+    <h2 class="search-header">Search results for <span class="search-header-term" ng-bind="searchTerm"></span></h2>
+    <div class="search-result-details">Showing {{songs.length}} of {{'10000' | number:0}} results</div>
+    <sh-fixed-scroll watch>
+      <div class="song-table-headers" ng-style="{width: playlistHeaderWidth}" sh-columns-callback="saveColumnWidths()" sh-columns="{}">
+        <div class="song-table-header" sh-column-model="columnWidths[0]" ng-style="{width: columnWidths[0]}" sh-column>
+          <div ng-click="playlistTable.toggleSort('title')" ng-class="{'sort-asc': playlistTable.order === '+title', 'sort-desc': playlistTable.order === '-title'}">Track</div>
+        </div>
+        <div class="song-table-header" sh-column-model="columnWidths[3]" ng-style="{width: columnWidths[3]}" sh-column>
+          <div ng-click="playlistTable.toggleSort('artist')" ng-class="{'sort-asc': playlistTable.order === '+artist', 'sort-desc': playlistTable.order === '-artist'}">Artist</div>
+        </div>
+        <div class="song-table-header" sh-column-model="columnWidths[1]" ng-style="{width: columnWidths[1]}" sh-column>
+          <div ng-click="playlistTable.toggleSort('duration')" ng-class="{'sort-asc': playlistTable.order === '+duration', 'sort-desc': playlistTable.order === '-duration'}">Time</div>
+        </div>
+        <div class="song-table-header" sh-column-model="columnWidths[2]" ng-style="{width: columnWidths[2]}" sh-column="{min: 115}">
+          <div ng-click="playlistTable.toggleSort('rating')" ng-class="{'sort-asc': playlistTable.order === '+rating', 'sort-desc': playlistTable.order === '-rating'}">Rating</div>
+        </div>
+      </div>
+    </sh-fixed-scroll>
+    
+    <div ng-switch on="playlist.length">
+      <div ng-switch-when="0">
+        <div class="song-table-msg">No results found. Please try again later.</div>
+      </div>
+      <div ng-switch-default>
+        <div sh-key="songKeyBindings"
+             ng-dblclick="playSong($event, song)"
+             class="song-table-row"
+             ng-style="{width: playlistHeaderWidth}"
+             ng-class="{'sh-selected': song.selected, 'song-playing-row': $stores.playerStore.currentSong === song}"
+             sh-selectable="$index"
+             sh-selectable-object="song"
+             ng-repeat="(songIndex, song) in songs | orderBy:playlistTable.order track by song._id">
+          <div class="song-table-column" ng-style="{width: columnWidths[0]}"><span class="song-play-icon">&#9656;</span> <span ng-bind="::song.title"></span></div>
+          <div class="song-table-column" ng-style="{width: columnWidths[3]}" ng-bind="::song.artist"></div>
+          <div class="song-table-column" ng-style="{width: columnWidths[1]}" ng-bind="song.durationText"></div>
+          <div class="song-table-column" ng-style="{width: columnWidths[2]}">
+            <app-stars value="song.rating" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

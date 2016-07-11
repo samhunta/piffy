@@ -1,0 +1,38 @@
+<div ng-controller="LoginController">
+
+<div ng-if="!nodeless" class="navbar navbar-main navbar-login navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="clearfix navbar-titlebar" style="-webkit-app-region: drag;">
+
+      <div class="navbar-window-buttons">
+        <div ng-click="closeWindow($event)" class="navbar-window-button navbar-window-button-close"></div>
+        <div ng-click="minimizeWindow($event)" class="navbar-window-button navbar-window-button-min"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="login-container">
+  <a class="login-logo" ng-style="logoStyle" ng-bind="::app.settings.get('title')"></a>
+  <form ng-submit="submitForm($event)" class="login-form">
+    <div ng-if="err" class="alert login-form-err slide-top alert-ptr" ng-bind="err"></div>
+    <div ng-if="loading" class="login-form-loader small-loader">Signing in...</div>
+    
+    <div class="form-spacing">
+      <input type="text" ng-model="email" ng-change="updateInfo()" class="form-control" placeholder="Email or Username">
+    </div>
+    <div class="form-spacing">
+      <input type="password" ng-model="password" ng-change="updateInfo()" class="form-control" placeholder="Password">
+    </div>
+
+    <label class="toggler-label">
+      <input class="toggle-checkbox" type="checkbox">
+      <div class="toggler"></div>
+      Keep me signed in
+    </label>
+
+    <button ng-disabled="loading" ng-bind="loading ? 'Signing in...' : 'Sign in'" class="btn login-main-btn" type="submit"></button>
+  </form>
+</div>
+
+</div>

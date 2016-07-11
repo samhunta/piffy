@@ -1,0 +1,38 @@
+<div app-loader="isLoading"></div>
+<div ng-show="!isLoading" sh-autofocus="1" sh-key="{ del: '$event.preventDefault()', bsp: '$event.preventDefault()' }" sh-scrollarea="85" class="full-container">
+  <div sh-focussable sh-selectables="selectableOpts" class="main-stretch song-table main-top">
+    <h2 class="hot-header">Play Queue</h2>
+    <sh-fixed-scroll watch>
+      <div class="song-table-headers" ng-style="{width: playlistHeaderWidth}" sh-columns-callback="saveColumnWidths()" sh-columns="{}">
+        <div class="song-table-header" sh-column-model="columnWidths[0]" ng-style="{width: columnWidths[0]}" sh-column>Track</div>
+        <div class="song-table-header" sh-column-model="columnWidths[3]" ng-style="{width: columnWidths[3]}" sh-column>Artist</div>
+        <div class="song-table-header" sh-column-model="columnWidths[1]" ng-style="{width: columnWidths[1]}" sh-column>Time</div>
+        <div class="song-table-header" sh-column-model="columnWidths[2]" ng-style="{width: columnWidths[2]}" sh-column="{min: 115}">Rating</div>
+      </div>
+    </sh-fixed-scroll>
+    
+    <div ng-switch on="playlist.length">
+      <div ng-switch-when="0">
+        <div class="song-table-msg">Your play queue is currently empty.</div>
+      </div>
+      <div ng-switch-default>
+        <div sh-key="songKeyBindings"
+             ng-dblclick="playSong($event, song)"
+             class="song-table-row"
+             ng-style="{width: playlistHeaderWidth}"
+             ng-class="{'sh-selected': song.selected}"
+             sh-selectable="$index"
+             sh-selectable-object="song"
+             ng-repeat="(songIndex, song) in songs | orderBy:playlistTable.order track by song._id">
+          <div class="song-table-column" ng-style="{width: columnWidths[0]}"><span class="song-play-icon">&#9656;</span> <span ng-bind="::song.title"></span></div>
+          <div class="song-table-column" ng-style="{width: columnWidths[3]}" ng-bind="::song.artist"></div>
+          <div class="song-table-column" ng-style="{width: columnWidths[1]}" ng-bind="song.durationText"></div>
+          <div class="song-table-column" ng-style="{width: columnWidths[2]}">
+            <app-stars value="song.rating" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

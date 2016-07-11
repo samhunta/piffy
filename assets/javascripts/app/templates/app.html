@@ -1,0 +1,49 @@
+<div app-loader="app.loading"></div>
+<div ng-if="!app.loading" class="navbar navbar-main navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="clearfix navbar-titlebar" style="-webkit-app-region: drag;">
+      <div class="navbar-app-title">
+        <a class="navbar-app-brand" ng-bind="::app.settings.get('title').toUpperCase()"></a>
+      </div>
+
+      <div class="clearfix navbar-window-buttons">
+        <div ng-if="!nodeless" class="pull-left">
+          <div ng-click="closeWindow($event)" class="navbar-window-button navbar-window-button-close"></div>
+          <div ng-click="minimizeWindow($event)" class="navbar-window-button navbar-window-button-min"></div>
+          <div ng-click="maximizeWindow($event)" class="navbar-window-button navbar-window-button-max"></div>
+        </div>
+        <div ng-if="!nodeless" class="pull-left history-nav">
+          <span ng-click="historyBack($event)" ng-class="{'has-history': $root.$history.hasPrev}" class="pull-left player-controls-back-small"></span>
+          <span ng-click="historyForward($event)" ng-class="{'has-history': $root.$history.hasNext}" class="pull-left player-controls-forward-small"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pull-right">
+      <ul class="nav navbar-nav">
+        <li><a bs-dropdown="userPreferencesDropdown" data-placement="bottom-right" data-html="true" class="btn-lg"><img ng-src="http://www.gravatar.com/avatar/{{userMeta.avatar}}" class="avatar-settings"></a></li>
+      </ul>
+    </div>
+
+    <div ui-view="searchBar"></div>
+  </div>
+</div>
+
+<div sh-columns="{}" sh-columns-callback="app.saveColumnWidths()" class="main-wrapper">
+  <div ui-view="sidebar"></div>
+  <div ng-style="{'left': app.columnWidths.sidebar}" class="main" sh-column="{last:true}">
+    <div ng-show="app.tabsNav.selected.length === 0">
+      <div app-loader="app.isLoading"></div>
+      <div ng-show="!app.isLoading">
+        <div ng-animate="'toggle'" ui-view></div>
+      </div>
+    </div>
+
+    <div ng-repeat="tab in app.tabs">
+      <div ng-show="app.tabsNav.selected[0] === tab" ng-style="{'left': app.columnWidths.sidebar}" sh-column="{last:true}">
+        <div sh-watch="true" sh-include="tab"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div ui-view="player"></div>

@@ -1,0 +1,42 @@
+<div sh-focusable="1" class="sidebar-wrapper" sh-column="{min:174,max:300,distance:4}" sh-column-model="app.columnWidths.sidebar" ng-style="{width: app.columnWidths.sidebar}">
+  <div class="sidebar-full">
+    <div sh-scrollarea="85" class="sidebar" sh-selectables="app.sidebarNav" ng-style="{bottom: app.columnWidths.sidebar}">
+        <div class="sidebar-scroll">
+          <h5 class="navbar-top-header navbar-section-header">Browse Selections</h5>
+          <ul class="nav nav-sidebar">
+            <li sh-selectable="0" sh-selectable-object="app.sidebarOpts[0]" ng-class="{active: app.sidebarOpts[0].selected}"><a ng-bind="app.sidebarOpts[0].label"></a></li>
+            <li sh-selectable="1" sh-selectable-object="app.sidebarOpts[1]" ng-class="{active: app.sidebarOpts[1].selected}"><a ng-bind="app.sidebarOpts[1].label"></a></li>
+          </ul>
+
+          <h5 class="navbar-section-header">My Music</h5>
+          <ul class="nav nav-sidebar">
+            <li sh-selectable="2" sh-selectable-object="app.sidebarOpts[2]" ng-class="{active: app.sidebarOpts[2].selected}"><a>Downloads</a></li>
+            <li sh-selectable="3" sh-selectable-object="app.sidebarOpts[3]" ng-class="{active: app.sidebarOpts[3].selected}"><a ng-bind="app.sidebarOpts[3].label"></a></li>
+            <li sh-selectable="4" sh-selectable-object="app.sidebarOpts[4]" ng-class="{active: app.sidebarOpts[4].selected}"><a>Queue <span ng-bind="app.player.length" class="badge badge-alt"></span></a></li>
+          </ul>
+
+          <h5 class="navbar-section-header">Entertainment</h5>
+          <ul class="nav nav-sidebar">
+            <li sh-selectable="5" sh-selectable-object="app.sidebarOpts[5]" ng-class="{active: app.sidebarOpts[5].selected}"><a ng-bind="app.sidebarOpts[5].label"></a></li>
+            <li sh-selectable="6" sh-selectable-object="app.sidebarOpts[6]" ng-class="{active: app.sidebarOpts[6].selected}"><a ng-bind="app.sidebarOpts[6].label"></a></li>
+            <li sh-selectable="7" sh-selectable-object="app.sidebarOpts[7]" ng-class="{active: app.sidebarOpts[7].selected}"><a ng-bind="app.sidebarOpts[7].label"></a></li>
+          </ul>
+
+          <a ng-click="sidebar.createPlaylist(true)" class="navbar-btn sh-btn sh-btn-long sh-btn-primary btn-xs btn-icon"><i class="icon icon-sm icon-circle-plus"></i> ADD PLAYLIST</a>
+
+          <ul class="nav nav-sidebar">
+            <li sh-selectable="$index+8" sh-selectable-object="playlist" ng-class="{active: playlist.selected}" sh-right-click="app.playlists.contextMenu($event, $index)" ng-repeat="playlist in app.playlists track by $index">
+              <a ng-class="{navEditing: playlist.editing}">
+                <span sh-editable-callback="finishEdit(playlist, $value, $update, $refocus)" sh-editable="playlist.editing" ng-model="playlist.name"></span>
+                <i class="icon icon-notes"></i>
+                &nbsp;
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div ng-style="{height: app.columnWidths.sidebar, width: app.columnWidths.sidebar}" class="sidebar-artist-info">
+      <div soundcloud-control ng-class="{'hide-player': $hidden}" player="app.player"></div>
+    </div>
+  </div>
+</div>

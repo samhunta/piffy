@@ -1,0 +1,11 @@
+{
+	"title": "piffy",
+	"logo": "public/logo.png",
+	"debug": true,
+	"apps": {
+		"movies":   false,
+		"music":    false,
+		"books":    false,
+		"tv_shows": false
+	}
+}

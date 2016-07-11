@@ -1,0 +1,37 @@
+<div class="el-player">
+  <div ng-click="$player.back();" class="pull-left player-controls-back">
+  </div>
+  <div ng-click="$player.play();" ng-if="!$player.button" class="pull-left player-controls-play">
+  </div>
+  <div ng-click="$player.play();" ng-if="$player.button" class="pull-left player-controls-pause">
+  </div>
+  <div ng-click="$player.forward();" class="pull-left player-controls-forward">
+  </div>
+
+  <div ng-class="{'change-active': $player.isSeekingVolume}" class="volume-control pull-left">
+    <div class="volume-bar" opts="volumeOpts" sh-range="$player.volumeRange">
+      <div class="volume-bar-range" sh-range-slider="vertical"></div>
+    </div>
+
+    <div ng-show="$player.vol === 0" ng-click="$player.toggleVolume();" class="player-controls-vol0 pull-left">
+    </div>
+
+    <div ng-show="$player.vol === 1" ng-click="$player.toggleVolume();" class="player-controls-vol1 pull-left">
+    </div>
+
+    <div ng-show="$player.vol === 2" ng-click="$player.toggleVolume();" class="player-controls-vol2 pull-left">
+    </div>
+
+    <div ng-show="$player.vol === 3" ng-click="$player.toggleVolume();" class="player-controls-vol3 pull-left">
+    </div>
+  </div>
+
+  <div ng-bind="$player.positionText" class="pull-left player-time">0:03</div>
+  <div ng-bind="$player.durationText" class="pull-right player-time">0:03</div>
+
+  <div class="player-bar" opts="playerPositionOpts" sh-range="$player.playerPositionRange">
+    <div class="player-bar-background" ng-style="{backgroundImage: $player.waveformBg}" ng-if="$player.waveformBg"></div>
+    <div class="player-bar-range" sh-range-slider></div>
+  </div>
+
+</div>

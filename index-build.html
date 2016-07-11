@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <base href="./">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <link href="public/fonts/lato/lato.css" rel="stylesheet">
+    <link href="public/icomoon/style.css" rel="stylesheet">
+    <link href="public/fontawesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- App dependencies -->
+    <script src="public/jquery.min.js"></script>
+    <script>
+    (function(window){
+        var appScript;
+        var target = document.getElementsByTagName('script')[0].parentNode;
+        var addScript = function (src) {
+            var el = document.createElement('script');
+            el.src = src;
+            el.async = true;
+            target.appendChild(el);
+            return el;
+        };
+
+        appScript = addScript('assets/app.js');
+
+        appScript.onload = function () {
+            angular.bootstrap(document, ["app"]);
+        };
+    }.call(this,this));
+    </script>
+  </head>
+
+  <body ng-class="$root.bodyClass">
+    <div ui-view></div>
+  </body>
+</html>

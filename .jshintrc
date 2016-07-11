@@ -1,0 +1,13 @@
+{
+  "strict": true,
+  "boss": true,
+  "undef": true,
+  "unused": true,
+  "globals": {
+    "console": true,
+    "angular": true,
+    "underscore": true,
+    "jQuery": true,
+    "_": true
+  }
+}

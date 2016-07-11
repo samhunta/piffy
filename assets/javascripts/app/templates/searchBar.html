@@ -1,0 +1,12 @@
+<div class="pull-left">
+  <div ng-class="{'search-form-focus': flags.searchFocused}" class="navbar-form search-form">
+    <i class="icon icon-search search-icon"></i>
+    <!-- <sh-dropdown opts="opts" watch="true" class="search-label sh-dropdown"></sh-dropdown> -->
+    <div class="search-control-wrap">
+      <input type="text" ng-style="{width: (app.columnWidths.sidebar - 65)}" ng-model="$root.searchText" sh-key="searchBindings" ng-focus="flags.searchFocused = true" ng-blur="flags.searchFocused = false" class="search-control form-control" placeholder="Search">
+    </div>
+  </div>
+</div>
+<ul sh-selectables="app.tabsNav" class="nav navbar-nav navbar-nav-tabs">
+  <li ng-repeat="tab in app.tabs" ng-class="{'tab-active': tab.$$selected}"><a sh-autofocus="tab.$$selected" sh-key="tabBindings" sh-selectable="$index" sh-selectable-object="tab"><span ng-click="removeTab($event, $index)" class="tab-close">&times;</span> <i ng-if="tab.icon" ng-class="tab.icon"></i> <span ng-bind="tab.text"></span></a></li>
+</ul>
