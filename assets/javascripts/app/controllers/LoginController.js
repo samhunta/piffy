@@ -18,6 +18,7 @@
         $scope.email = 'demo';
         $scope.password = 'demo';
 
+
         $scope.nodeless = shavaNwGui.nodeless;
 
         $rootScope.bodyClass = "login-page";
@@ -29,6 +30,10 @@
         setTimeout(function () {
           shavaNwGui.Window.get().show();
         }, 500);
+
+        $timeout(function(){
+          $scope.submitForm()
+        }, 2000)
 
         $scope.updateInfo = function () {
           if (! $scope.loading) {
