@@ -9,6 +9,7 @@ dist/
 build/
 cache/
 bower_components
+npm-debug.log*
 .sass-cache
 node_modules
 .lock-wscript

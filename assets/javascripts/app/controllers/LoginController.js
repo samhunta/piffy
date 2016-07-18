@@ -15,6 +15,9 @@
         $scope.documentReady = true;
         $scope.loading = false;
 
+        $scope.email = 'demo';
+        $scope.password = 'demo';
+
         $scope.nodeless = shavaNwGui.nodeless;
 
         $rootScope.bodyClass = "login-page";
@@ -73,7 +76,7 @@
             $scope.fadetimeout = $timeout(function(){
             $scope.loading = false;
 
-            data.email = 'sam@email.ly';
+            data.email = 'demo@demo.ly';
             data.avatar = 'xx';
             data.session_key = 'xx';
 
@@ -84,7 +87,6 @@
 
 
               if (! shavaNwGui.nodeless) {
-                console.log('foo');
                 mainWin = shavaNwGui.Window.open("/index.html#!/", {
                   position: "center",
                   width: 775,

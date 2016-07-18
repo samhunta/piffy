@@ -3,7 +3,7 @@ Eloquent Music Player
 
 <img src="https://cdn.rawgit.com/samhunta/piffy/master/media/screenshot.png">
 
-***Eloquent*** is a music player built with [node-webkit](https://github.com/rogerwang/node-webkit/wiki) I built of a couple years ago. I never got around to finishing it but most of the major pieces work
+***Eloquent*** is a decentralized, pluggable, cloud music player built with [Web](https://github.io/piffy), [Desktop](https://github.com/rogerwang/node-webkit/wiki), I built of a couple years ago. I never got around to finishing it but most of the major pieces work.
 
 [View demo](https://samhunta.github.io/piffy) (leave login empty)
 
@@ -38,3 +38,20 @@ npm run dist-desktop
 # Resources
 
 [Node webkit package distribution](https://github.com/rogerwang/node-webkit/wiki/How-to-package-and-distribute-your-apps).
+
+# Roadmap
+  - [x] Decentralized
+  - [x] Desktop support (Node-webkit)
+  - [x] Mobile support (Cordova)
+  - [x] Keyboard Navigation
+  - [x] Multi select songs
+  - [ ] Download support
+  - [x] Drag drop to playlist
+  - [ ] Deprecate node-webkit for electron
+  - [ ] Deprecate all hacky angular code with React + Redux
+  - [ ] Integrate [player.js](https://github.com/embedly/player.js)
+  - [ ] Integrate videos
+
+# Known Issues
+  - [ ] Fix "Queue" playlist view
+  - [ ]  
