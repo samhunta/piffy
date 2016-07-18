@@ -1,7 +1,7 @@
 {
   "name": "piffy",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Hackable cross-platform media player",
   "main": "app://eloquent/index.html#!/login",
   "node-main": "player.js",
   "node-remote": "127.0.0.1:24922",
