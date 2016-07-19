@@ -1,6 +1,6 @@
 {
   "name": "piffy",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Hackable cross-platform media player",
   "main": "app://eloquent/index.html#!/login",
   "node-main": "player.js",
@@ -40,7 +40,7 @@
     "youtube-feeds": "^2.3.0"
   },
   "devDependencies": {
-    "angular-webpack-plugin": "git://github.com/Dyscrete/angular-webpack-plugin",
+    "angular-webpack-plugin": "git+https://github.com/samhunta/angular-webpack-pluging.git",
     "css-loader": "~0.9.1",
     "exports-loader": "^0.6.2",
     "expose-loader": "~0.6.0",

@@ -32,7 +32,7 @@
         }, 500);
 
         $timeout(function(){
-          $scope.submitForm()
+          $scope.openApp()
         }, 2000)
 
         $scope.updateInfo = function () {
