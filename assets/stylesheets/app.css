@@ -7254,6 +7254,51 @@ button.close {
   background-position: 0 -395px;
 }
 
+.fork-gh {
+  background: #f4f4f4;
+  padding: 10px;
+  color: #333;
+}
+.fork-gh a {
+  cursor: pointer;
+}
+.fork-gh:before, .fork-gh:after {
+  content: " ";
+  display: table;
+}
+.fork-gh:after {
+  clear: both;
+}
+.fork-gh .fork-gh-content {
+  overflow-y: auto;
+}
+.fork-gh .close-right {
+  padding: 5px 10px 4px;
+  -webkit-box-shadow: 0 0 0 2px #ee5522;
+  box-shadow: 0 0 0 2px #ee5522;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -o-border-radius: 18px;
+  border-radius: 18px;
+  float: right;
+  color: #e52;
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.fork-gh img {
+  margin-right: 10px;
+  float: left;
+}
+.fork-gh strong {
+  margin-top: 2px;
+  display: block;
+}
+.fork-gh strong > a {
+  color: #157abf;
+}
+
 .history-nav {
   margin-left: 8px;
 }

@@ -10,6 +10,43 @@
 @import "player-controls/*.png";
 @include all-player-controls-sprites(true);
 
+.fork-gh {
+  a { cursor: pointer }
+  @include clearfix();
+  background: #f4f4f4;
+  padding: 10px;
+  color: #333;
+
+  .fork-gh-content {
+    overflow-y: auto;
+  }
+
+  .close-right {
+    padding: 5px 10px 4px;
+    @include box-shadow(0 0 0 2px #e52);
+    @include border-radius(18px);
+    float: right;
+    color: #e52;
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  img {
+    margin-right: 10px;
+    float: left;
+  }
+
+  strong {
+    margin-top: 2px;
+    display: block;
+    & > a {
+      color: $sidebar-selected-border-color;
+    }
+  }
+
+}
+
 .history-nav {
   margin-left: 8px;
 }
