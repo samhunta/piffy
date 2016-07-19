@@ -893,11 +893,11 @@ input,textarea,.sh-editable {
 // Sort
 //===========================
 
-.sort-asc:after {
+.sort-desc:after {
   content: ' \25BC';
 }
 
-.sort-desc:after {
+.sort-asc:after {
   content: ' \25B2';
 }
 

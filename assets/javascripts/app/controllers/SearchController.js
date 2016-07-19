@@ -99,7 +99,7 @@
             title: track.name,
             images: images,
             duration: Math.floor(Math.random()*270)+120,
-            rating: Math.min(0, (50000 / track.listeners)*500)
+            rating: 2 + Math.min(3, track.listeners / 50000)
           }));
         });
       });

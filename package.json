@@ -1,6 +1,6 @@
 {
   "name": "piffy",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha",
   "description": "Hackable cross-platform media player",
   "main": "app://eloquent/index.html#!/login",
   "node-main": "player.js",

@@ -38,6 +38,46 @@ npm run dist-desktop
 
 [Node webkit package distribution](https://github.com/rogerwang/node-webkit/wiki/How-to-package-and-distribute-your-apps).
 
+# Roadmap
+  - [ ] Fix "Queue" playlist view
+  - [ ] **WRITE TESTS AND SWITCH TO REACT + ELECTRON**
+  - [ ] Theme support
+  - [ ] Add Babel
+  - [ ] Add ESLint and Style Guide
+  - [ ] Web context menu polyfill/shim
+  - [ ] Deprecate node-webkit for electron
+  - [ ] Integrate [player.js](https://github.com/embedly/player.js)
+  - [ ] Integrate video support
+  - [ ] Add video torrent search
+  - [ ] Add URL loader
+  - [ ] Fire TV launcher
+  - [ ] Chromecast launcher
+  - [ ] Chrome sync extension
+  - [ ] Search (<s>Soundcloud</s>, <s>YouTube</s>, Torrents Plugins, RSS Plugins, XBMC Plugins)
+  - [x] Decentralized
+  - [x] Sort playlist
+  - [x] Multiple search tabs
+  - [x] Desktop support (Node-webkit)
+  - [x] Mobile support (Cordova)
+  - [x] Web support
+  - [x] Local settings
+  - [x] Sync settings with self-hosted piffy server
+  - [x] LEET Keyboard bindings
+  - [x] Multi select songs
+  - [x] Download view
+  - [x] Drag drop to playlist
+
+# Known Issues
+  - [ ] Fix "Queue" playlist view
+  - [ ] Kill Angular
+  - [ ] Kill Node-Webkit
+
+# Changelog
+
+# v0.1.0-alpha
+
+  - Public release
+
 # Application Structure
 
 This app is using custom legacy dependency injection resolvers in it's packager, the directory structure is pretty straight-forward.
@@ -213,49 +253,6 @@ assets/javascripts
             └── watchChange.js
 ```
 
-# Roadmap
-  - [x] Decentralized
-  - [x] Desktop support (Node-webkit)
-  - [x] Mobile support (Cordova)
-  - [x] Keyboard Navigation
-  - [x] Multi select songs
-  - [ ] Download support
-  - [x] Drag drop to playlist
-  - [ ] Deprecate node-webkit for electron
-  - [ ] Deprecate all hacky angular code with React + Redux
-  - [ ] Integrate [player.js](https://github.com/embedly/player.js)
-  - [ ] Integrate videos
+# License
 
-# Known Issues
-  - [ ] Fix "Queue" playlist view
-  - [ ] **WRITE TESTS AND SWITCH TO REACT + ELECTRON**
-  - [ ] Theme support
-  - [ ] Add Babel
-  - [ ] Add ESLint and Style Guide
-  - [ ] Web context menu polyfill/shim
-  - [ ] Deprecate node-webkit for electron
-  - [ ] Integrate [player.js](https://github.com/embedly/player.js)
-  - [ ] Integrate video support
-  - [ ] Add video torrent search
-  - [ ] Add URL loader
-  - [ ] Fire TV launcher
-  - [ ] Chromecast launcher
-  - [ ] Chrome sync extension
-  - [ ] Search (<s>Soundcloud</s>, <s>YouTube</s>, Torrents Plugins, RSS Plugins, XBMC Plugins)
-  - [x] Decentralized
-  - [x] Sort playlist
-  - [x] Multiple search tabs
-  - [x] Desktop support (Node-webkit)
-  - [x] Mobile support (Cordova)
-  - [x] Web support
-  - [x] Local settings
-  - [x] Sync settings with self-hosted piffy server
-  - [x] LEET Keyboard bindings
-  - [x] Multi select songs
-  - [x] Download view
-  - [x] Drag drop to playlist
-
-# Known Issues
-  - [ ] Fix "Queue" playlist view
-  - [ ] Kill Angular
-  - [ ] Kill Node-Webkit
+MIT (http://www.opensource.org/licenses/mit-license.php)
