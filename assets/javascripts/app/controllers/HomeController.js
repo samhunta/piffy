@@ -81,13 +81,13 @@
     };
 
     $scope.getResults = function () {
-      $scope.isLoading = lastfmFeedsFactory('geo.getmetrouniquetrackchart', {
+      $scope.isLoading = lastfmFeedsFactory('geo.gettoptracks', {
         country: 'united states',
-        metro: 'los angeles'
+        location: 'los angeles',
       }, true).then(function (data) {
         var rating = 5.0;
 
-        data.toptracks.track.forEach(function(track) {
+        data.tracks.track.forEach(function(track) {
           rating -= 0.041;
 
           images = track.image != null ? track.image.map(function (o) {
