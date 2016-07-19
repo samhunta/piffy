@@ -6,7 +6,6 @@
 
 [View web demo](https://samhunta.github.io/piffy)
 
-
 ```
 # Install bower and npm dependencies
 bower install && npm install
@@ -74,7 +73,7 @@ npm run dist-desktop
 
 # Changelog
 
-# v0.1.0-alpha
+v0.1.0-alpha
 
   - Public release
 
@@ -252,6 +251,14 @@ assets/javascripts
             ├── util.js
             └── watchChange.js
 ```
+
+# Contributors
+
+The original author of Piffy is [Sam Hunter](https://github.com/samhunta)
+
+This project is currently seeking a lead adopter
+
+[List all contributors](https://github.com/samhunta/piffy/graphs/contributors)
 
 # License
 
