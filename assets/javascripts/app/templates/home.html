@@ -1,18 +1,19 @@
 <div app-loader="isLoading"></div>
 <div ng-show="!isLoading" sh-autofocus="1" sh-key="{ del: '$event.preventDefault()', bsp: '$event.preventDefault()' }" sh-scrollarea="85" class="full-container">
   <div sh-focussable sh-selectables="selectableOpts" class="main-stretch song-table main-top">
+    
     <div ng-hide="hidenotify" class="fork-gh clearfix">
-      <span ng-click="hidenotify=true" class="close-right">&times; CLOSE</span>
+      <span ng-click="hidenotify=true" class="close-right">&times;</span>
       <a href="https://github.com/samhunta/piffy">
-        <img src="https://avatars1.githubusercontent.com/u/627984?v=3&s=50">
+        <img src="https://avatars1.githubusercontent.com/u/627984?v=3&s=65" alt="Sam Hunter">
       </a>
-      <div class="fork-gh-content">
+    <div class="fork-gh-content">
       <strong><a href="https://github.com/samhunta/piffy">Sam</a></strong>
-      <p>v0.1.0-rc released on Github. <a href="https://github.com/samhunta/piffy">Fork it</a>.</p>
-      <iframe src="https://ghbtns.com/github-btn.html?user=samhunta&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
-      <iframe src="https://ghbtns.com/github-btn.html?user=samhunta&repo=piffy&size=large&type=fork&count=false" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+      <p>v0.1.0 alpha on Github. <a href="https://github.com/samhunta/piffy">Fork it</a>.</p>
+      <iframe src="https://ghbtns.com/github-btn.html?user=samhunta&type=follow&count=true&size=small" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
       </div>
     </div>
+
     <h2 class="hot-header">Hot This Week</h2>
     <div ng-bind="$state"></div>
     <sh-fixed-scroll watch>

@@ -11,25 +11,58 @@
 @include all-player-controls-sprites(true);
 
 .fork-gh {
-  a { cursor: pointer }
+  $color: #888;
+  @include background(
+    linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0))
+  );
   @include clearfix();
-  background: #f4f4f4;
-  padding: 10px;
-  color: #333;
+  padding: 20px;
+  font-size: 12px;
+  line-height: 16px;
+
+  a {
+    cursor: pointer;
+    text-decoration: underline;
+    color: $color;
+    
+    &:active {
+      color: #fff;
+    }
+  }
+  color: $color;
+
+  &, & > p, & > strong {
+    font-size: 13px;
+    line-height: 13px;
+  }
 
   .fork-gh-content {
-    overflow-y: auto;
+    float: left;
+  }
+
+  img {
+    @include border-radius(3px);
   }
 
   .close-right {
-    padding: 5px 10px 4px;
-    @include box-shadow(0 0 0 2px #e52);
-    @include border-radius(18px);
-    float: right;
-    color: #e52;
-    margin-top: 12px;
-    font-weight: 600;
-    font-size: 16px;
+    text-align: center;
+    width: 13px;
+    height: 13px;
+    font-size: 13px;
+    line-height: 13px;
+    @include box-shadow(0 0 0 1px #aaa);
+    @include border-radius(13px);
+    float: left;
+    color: #aaa;
+    margin-right: 10px;
+    &:active {
+      color: #fff;
+      @include box-shadow(0 0 0 1px #fff);
+    }
+  }
+
+  p {
+    margin: 7px 0 10px;
   }
 
   img {
@@ -40,9 +73,6 @@
   strong {
     margin-top: 2px;
     display: block;
-    & > a {
-      color: $sidebar-selected-border-color;
-    }
   }
 
 }
@@ -291,7 +321,7 @@ input,textarea,.sh-editable {
       border: 0;
       font-size: 13px;
       height: 31px;
-      @include border-radius(20px);
+      @include border-right-radius(20px);
       width: 100%;
 
       &:focus {
@@ -809,6 +839,8 @@ input,textarea,.sh-editable {
 
     // Search query element
     .search-control {
+      @include border-left-radius(0);
+      @include border-right-radius(33px);
       @include transition(0.2s ease-in-out width);
       border: 0;
       width: 200px;
@@ -848,7 +880,7 @@ input,textarea,.sh-editable {
     }
 
     .search-icon {
-      @include border-left-radius(43px);
+      @include border-left-radius(33px);
       text-align: center;
       width: 33px;
       color: #888;
@@ -965,11 +997,12 @@ input,textarea,.sh-editable {
   }
 
   .volume-control {
+    @include border-top-radius(33px);
     position: relative;
-    margin-top: 4px;
+    margin-top: 0;
     height: 40px;
     margin-left: 10px;
-    padding: 10px 10px;
+    padding: 14px 10px 10px;
     width: 35px;
     z-index: 10000;
     background: #141416;

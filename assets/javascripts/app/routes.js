@@ -7,15 +7,13 @@
   configureRoutes.$inject = ['TEMPLATE_PATH', '$locationProvider', '$stateProvider', '$urlRouterProvider'];
 
   function configureRoutes(TEMPLATE_PATH, $locationProvider, $stateProvider, $urlRouterProvider) {
-
     $urlRouterProvider.otherwise('/');
-
     $locationProvider.html5Mode(false).hashPrefix('!');
 
     $stateProvider
       .state('app', {
-        abstract: true,
         url: '',
+        abstract: true,
         templateUrl: TEMPLATE_PATH+'app.html',
         controller: 'AppController'
       })

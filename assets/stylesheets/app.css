@@ -7255,12 +7255,14 @@ button.close {
 }
 
 .fork-gh {
-  background: #f4f4f4;
-  padding: 10px;
-  color: #333;
-}
-.fork-gh a {
-  cursor: pointer;
+  background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background: -o-linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  padding: 20px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #888888;
 }
 .fork-gh:before, .fork-gh:after {
   content: " ";
@@ -7269,23 +7271,52 @@ button.close {
 .fork-gh:after {
   clear: both;
 }
+.fork-gh a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #888888;
+}
+.fork-gh a:active {
+  color: #fff;
+}
+.fork-gh, .fork-gh > p, .fork-gh > strong {
+  font-size: 13px;
+  line-height: 13px;
+}
 .fork-gh .fork-gh-content {
-  overflow-y: auto;
+  float: left;
+}
+.fork-gh img {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
 }
 .fork-gh .close-right {
-  padding: 5px 10px 4px;
-  -webkit-box-shadow: 0 0 0 2px #ee5522;
-  box-shadow: 0 0 0 2px #ee5522;
-  -webkit-border-radius: 18px;
-  -moz-border-radius: 18px;
-  -ms-border-radius: 18px;
-  -o-border-radius: 18px;
-  border-radius: 18px;
-  float: right;
-  color: #e52;
-  margin-top: 12px;
-  font-weight: 600;
-  font-size: 16px;
+  text-align: center;
+  width: 13px;
+  height: 13px;
+  font-size: 13px;
+  line-height: 13px;
+  -webkit-box-shadow: 0 0 0 1px #aaaaaa;
+  box-shadow: 0 0 0 1px #aaaaaa;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
+  border-radius: 13px;
+  float: left;
+  color: #aaa;
+  margin-right: 10px;
+}
+.fork-gh .close-right:active {
+  color: #fff;
+  -webkit-box-shadow: 0 0 0 1px white;
+  box-shadow: 0 0 0 1px white;
+}
+.fork-gh p {
+  margin: 7px 0 10px;
 }
 .fork-gh img {
   margin-right: 10px;
@@ -7294,9 +7325,6 @@ button.close {
 .fork-gh strong {
   margin-top: 2px;
   display: block;
-}
-.fork-gh strong > a {
-  color: #157abf;
 }
 
 .history-nav {
@@ -7554,11 +7582,8 @@ input:focus, textarea:focus, .sh-editable:focus {
   border: 0;
   font-size: 13px;
   height: 31px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  border-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
   width: 100%;
 }
 .login-page .login-form .form-control:focus {
@@ -7712,7 +7737,7 @@ input:focus, textarea:focus, .sh-editable:focus {
 }
 
 .small-loader {
-  background: url('../images/loader.svg?1468880641') no-repeat top left;
+  background: url('../images/loader.svg?1469059920') no-repeat top left;
   height: 24px;
   background-size: 24px;
   padding-left: 29px;
@@ -8052,6 +8077,10 @@ input:focus, textarea:focus, .sh-editable:focus {
   max-width: 500px;
 }
 .navbar-main .search-form .search-control {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 33px;
+  border-top-right-radius: 33px;
   -webkit-transition: 0.2s ease-in-out width;
   -o-transition: 0.2s ease-in-out width;
   transition: 0.2s ease-in-out width;
@@ -8088,8 +8117,8 @@ input:focus, textarea:focus, .sh-editable:focus {
   width: 400px;
 }
 .navbar-main .search-form .search-icon {
-  border-bottom-left-radius: 43px;
-  border-top-left-radius: 43px;
+  border-bottom-left-radius: 33px;
+  border-top-left-radius: 33px;
   text-align: center;
   width: 33px;
   color: #888;
@@ -8179,11 +8208,13 @@ input:focus, textarea:focus, .sh-editable:focus {
   text-align: center;
 }
 .el-player .volume-control {
+  border-top-right-radius: 33px;
+  border-top-left-radius: 33px;
   position: relative;
-  margin-top: 4px;
+  margin-top: 0;
   height: 40px;
   margin-left: 10px;
-  padding: 10px 10px;
+  padding: 14px 10px 10px;
   width: 35px;
   z-index: 10000;
   background: #141416;
@@ -8304,7 +8335,7 @@ input:focus, textarea:focus, .sh-editable:focus {
   height: 239px;
   bottom: 0;
   left: 0;
-  background: #444444 url('../images/no-song-selected.svg?1468880641') no-repeat center center;
+  background: #444444 url('../images/no-song-selected.svg?1469059920') no-repeat center center;
   -webkit-background-size: 100% auto;
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
