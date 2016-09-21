@@ -1,4 +1,4 @@
-# Piffy – Decentralized Cloud Media Player
+# Piffy – AngularJS Cloud Media Player
 
 <img src="https://cdn.rawgit.com/samhunta/piffy/master/media/screenshot.png">
 
